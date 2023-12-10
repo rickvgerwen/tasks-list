@@ -5,11 +5,6 @@ import { TasksComponent } from './page/tasks.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
     component: TasksComponent,
   },
 ];

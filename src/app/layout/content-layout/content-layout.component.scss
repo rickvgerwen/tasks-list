@@ -1,19 +1,12 @@
 .content-layout {
-  display: grid;
-  grid-template-areas:
-    'navbar'
-    'main'
-    'footer';
-
-  nav {
-    grid-area: navbar;
-  }
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0;
 
   main {
-    grid-area: main;
-  }
-
-  &:last-child {
-    grid-area: footer;
+    min-height: 100dvh;
+    width: 100%;
+    max-width: 900px;
+    margin: 100px auto 0;
   }
 }

@@ -1,0 +1,23 @@
+footer {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin-top: 5rem;
+  bottom: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0.25rem;
+    width: 2rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    border-radius: 0.25rem;
+  }
+}

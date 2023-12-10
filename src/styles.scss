@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --black: #0e1111;
+  --white: #faf9f6;
+
+  --primary-color: #86b9b0;
+  --secondary-color: #042630;
+
+  --heading-font-family: 'Lato', sans-serif;
+  --text-font-family: 'Karla', sans-serif;
+  --font-size: 16px;
+  --font-color: var(--black);
+  --text-font-weight: 400;
+
+  --standard-transition: 0.15s ease-in-out all;
+}
+
+html,
+body {
+  color: var(--font-color);
+  font-size: var(--font-size);
+  font-family: var(--text-font-family);
+  font-weight: var(--text-font-weight);
+}
+
+body {
+  margin: 0;
+  background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+}

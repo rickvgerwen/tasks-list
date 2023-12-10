@@ -9,7 +9,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
         loadChildren: () => import('@modules/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'tasks',
+        loadChildren: () => import('@modules/tasks/tasks.module').then((m) => m.TasksModule),
       },
     ],
   },
@@ -17,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

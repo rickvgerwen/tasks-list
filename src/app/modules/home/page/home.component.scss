@@ -1,0 +1,22 @@
+.block {
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.one {
+  background-color: var(--primary-color);
+}
+.two {
+  background-color: var(--secondary-color);
+}
+.three {
+  background-color: var(--third-color);
+}
+.four {
+  background-color: var(--fourth-color);
+}
+.five {
+  background-color: var(--fifth-color);
+}

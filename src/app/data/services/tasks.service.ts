@@ -13,7 +13,7 @@ export class TasksService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getTasks(): Observable<Task[]> {
+  public getAllTasks(): Observable<Task[]> {
     return this.httpClient.get<Task[]>(this.api_url + this.tasks_endpoint);
   }
 

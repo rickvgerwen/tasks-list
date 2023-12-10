@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TasksService } from '@data/services/tasks.service';
+import { Store } from '@ngrx/store';
+import { getAllTasksAction } from '@shared/store/actions/tasks.actions';
+import { allTasksSelector } from '@shared/store/selectors/tasks.selectors';
 import { Task } from '@shared/types/task.type';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -9,11 +11,11 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
-  public tasks$: Observable<Task[]> = of([]);
+  public tasks$: Observable<Task[]> = this.store.select(allTasksSelector);
 
-  constructor(private tasksService: TasksService) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.tasks$ = this.tasksService.getTasks();
+    this.store.dispatch(getAllTasksAction());
   }
 }

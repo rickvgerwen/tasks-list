@@ -13,12 +13,14 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TasksEffects } from '@shared/store/effects/tasks.effects';
 import { appReducers } from '@shared/store/reducers/app.reducers';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, ContentLayoutComponent, NavBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers, {}),

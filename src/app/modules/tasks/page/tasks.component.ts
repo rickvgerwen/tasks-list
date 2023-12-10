@@ -13,6 +13,8 @@ import { Observable } from 'rxjs';
 export class TasksComponent implements OnInit {
   public tasks$: Observable<Task[]> = this.store.select(allTasksSelector);
 
+  public searchValue = '';
+
   constructor(private store: Store) {}
 
   ngOnInit(): void {

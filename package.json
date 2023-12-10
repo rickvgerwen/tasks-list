@@ -10,7 +10,7 @@
     "test-cov": "ng test --code-coverage",
     "lint": "ng lint --cache",
     "pre-commit": "npm run lint & npm run test",
-    "json-server": "json-server --watch src/server/database.json --port 3000"
+    "json-server": "json-server --watch src/data/server/database.json --port 3000"
   },
   "private": true,
   "dependencies": {

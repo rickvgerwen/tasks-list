@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'tasks',
         loadChildren: () => import('@modules/tasks/tasks.module').then((m) => m.TasksModule),
       },
+      {
+        path: 'crud',
+        loadChildren: () => import('@modules/crud/crud.module').then((m) => m.CrudModule),
+      },
     ],
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },

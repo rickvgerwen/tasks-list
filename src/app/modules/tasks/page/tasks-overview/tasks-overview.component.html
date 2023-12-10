@@ -1,3 +1,5 @@
+<h1>All Tasks</h1>
+
 <ng-container *ngIf="tasks$ | async as tasks; else noTasks">
   <div class="search-area">
     <input type="text" class="search-input" [(ngModel)]="searchValue" placeholder="Search for a task" />

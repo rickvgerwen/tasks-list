@@ -58,8 +58,9 @@ input.search-input {
   color: var(--black);
 
   &:hover {
-    outline: 1px solid var(--primary-color);
-    outline-offset: 0.25rem;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--white);
     transition: (--standard-transition);
   }
 }

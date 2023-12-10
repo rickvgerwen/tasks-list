@@ -1,0 +1,52 @@
+<h1>Add a new Task</h1>
+
+<button class="btn btn-previous" (click)="backToOverview()">&#8592; Back to all tasks</button>
+
+<ng-container *ngIf="newTaskSuccess">
+  <section class="success-post">
+    <p>New task succesfully created! Let's see if you can find it...</p>
+  </section>
+</ng-container>
+
+<form [formGroup]="addTaskFormGroup" (ngSubmit)="submitAddTaskForm()">
+  <div class="form-group">
+    <label for="task-title">Title *</label>
+    <input
+      type="text"
+      id="task-title"
+      class="form-input title-input"
+      formControlName="taskTitle"
+      placeholder="Give your task a title" />
+  </div>
+
+  <div class="form-group">
+    <label for="task-description">Description</label>
+    <textarea
+      id="task-description"
+      class="form-input status-input"
+      formControlName="taskDescription"
+      placeholder="Give your task a description"
+      rows="5"
+      cols="33"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="task-status-select">Status</label>
+    <select id="task-status-select" formControlName="taskStatus">
+      <option value="ToDo">ToDo</option>
+      <option value="Doing">Doing</option>
+      <option value="Done">Done</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="task-priority-select">Priority</label>
+    <select id="task-priority-select" formControlName="taskPriority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-submit" [disabled]="this.addTaskFormGroup.invalid">Add new task</button>
+</form>

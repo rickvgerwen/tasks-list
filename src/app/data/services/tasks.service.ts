@@ -20,4 +20,9 @@ export class TasksService {
   public getTaskById(id: number): Observable<Task> {
     return this.httpClient.get<Task>(this.api_url + this.tasks_endpoint + '/' + id);
   }
+
+  public addNewTask(newTask: Task): Observable<Task> {
+    console.log('new Task');
+    return this.httpClient.post<Task>(this.api_url + this.tasks_endpoint, newTask);
+  }
 }

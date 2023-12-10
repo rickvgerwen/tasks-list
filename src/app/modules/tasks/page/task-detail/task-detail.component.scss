@@ -1,0 +1,32 @@
+.task-details {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+button.btn-previous {
+  border: none;
+  background-color: inherit;
+  margin-right: auto;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+}
+
+table {
+  text-align: left;
+  border-spacing: 1rem;
+
+  th,
+  td {
+    vertical-align: top;
+  }
+
+  th {
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--primary-color);
+  }
+}

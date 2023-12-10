@@ -1,0 +1,16 @@
+<ng-container *ngIf="tasks$ | async as tasks; else noTasks">
+  <div class="search-area">
+    <input type="text" class="search-input" [(ngModel)]="searchValue" placeholder="Search for a task" />
+  </div>
+
+  <ul class="tasks-list">
+    <div *ngFor="let task of tasks | highlightFilter: searchValue" class="task-item">
+      <h2><span [innerHTML]="task.title"></span></h2>
+      <p>Prio: <span [innerHTML]="task.priority"></span></p>
+      <p>Status: <span [innerHTML]="task.status"></span></p>
+      <button class="btn-detail" [routerLink]="task.id">See details</button>
+    </div>
+  </ul>
+</ng-container>
+
+<ng-template #noTasks>There are no tasks, get ambitous!</ng-template>

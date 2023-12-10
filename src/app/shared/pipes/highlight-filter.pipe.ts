@@ -10,7 +10,6 @@ export class HighlightFilterPipe<T extends Task> implements PipeTransform {
 
   transform(items: T[], searchText: string): T[] {
     const lowerSearchText = searchText.toLocaleLowerCase();
-    console.log({ searchText });
 
     if (!searchText) return items;
 

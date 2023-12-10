@@ -1,0 +1,37 @@
+<div class="task-details">
+  <button class="btn-previous" (click)="backToOverview()">&#8592; Back to all tasks</button>
+
+  <ng-container *ngIf="task$ | async as task; else noTask">
+    <table class="details">
+      <caption>
+        <h2>
+          {{ task.title }}
+        </h2>
+      </caption>
+      <tr>
+        <th>Id</th>
+        <td>{{ task.id }}</td>
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td>{{ task.title }}</td>
+      </tr>
+      <tr>
+        <th>status</th>
+        <td>{{ task.status }}</td>
+      </tr>
+      <tr>
+        <th>Priority</th>
+        <td>{{ task.priority }}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>{{ task.description }}</td>
+      </tr>
+    </table>
+  </ng-container>
+</div>
+
+<ng-template #noTask>
+  <p>No task has been found</p>
+</ng-template>

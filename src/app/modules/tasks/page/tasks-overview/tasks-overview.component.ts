@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.scss'],
+  templateUrl: './tasks-overview.component.html',
+  styleUrls: ['./tasks-overview.component.scss'],
 })
-export class TasksComponent implements OnInit {
-  public tasks$: Observable<Task[]> = this.store.select(allTasksSelector);
+export class TasksOverviewComponent implements OnInit {
+  public tasks$: Observable<Task[]> = this.store.select(allTasksSelector());
 
   public searchValue = '';
 

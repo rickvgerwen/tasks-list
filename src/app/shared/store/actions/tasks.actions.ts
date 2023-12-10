@@ -19,4 +19,4 @@ export const getAllTasksSuccessAction = createAction(
 
 export const addNewTaskAction = createAction(ADD_NEW_TASK_ACTION, props<{ newTask: Task }>());
 
-export const addNewTaskSuccessAction = createAction(ADD_NEW_TASK_SUCCESS_ACTION);
+export const addNewTaskSuccessAction = createAction(ADD_NEW_TASK_SUCCESS_ACTION, props<{ newTask: Task }>());

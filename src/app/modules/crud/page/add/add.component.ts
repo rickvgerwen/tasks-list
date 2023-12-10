@@ -35,10 +35,6 @@ export class AddComponent {
     });
   }
 
-  public logForm(): void {
-    console.log(this.addTaskFormGroup);
-  }
-
   public submitAddTaskForm(): void {
     if (this.addTaskFormGroup.invalid) {
       alert('Please fill in the form correctly.');
@@ -54,8 +50,6 @@ export class AddComponent {
       status: this.addTaskFormGroup.controls['taskStatus'].value,
       priority: this.addTaskFormGroup.controls['taskPriority'].value,
     };
-
-    console.log({ newTask });
 
     this.store.dispatch(addNewTaskAction({ newTask: newTask }));
 

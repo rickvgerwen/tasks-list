@@ -32,7 +32,7 @@ export class TasksEffects {
       ofType(addNewTaskAction),
       mergeMap(({ newTask }) => {
         return this.tasksService.addNewTask(newTask).pipe(
-          map(() => addNewTaskSuccessAction()),
+          map((newTask) => addNewTaskSuccessAction({ newTask: newTask })),
           catchError((e: HttpErrorResponse) => {
             console.error(e);
             return EMPTY;

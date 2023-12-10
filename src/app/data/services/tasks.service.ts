@@ -22,7 +22,6 @@ export class TasksService {
   }
 
   public addNewTask(newTask: Task): Observable<Task> {
-    console.log('new Task');
     return this.httpClient.post<Task>(this.api_url + this.tasks_endpoint, newTask);
   }
 }

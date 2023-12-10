@@ -1,14 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
-import { addNewTaskAction, getAllTasksSuccessAction } from '../actions/tasks.actions';
+import { addNewTaskSuccessAction, getAllTasksSuccessAction } from '../actions/tasks.actions';
 import { initialTasksState } from '../state/tasks.state';
 
 export const tasksReducer = createReducer(
   initialTasksState,
   on(getAllTasksSuccessAction, (state, { tasks }) => ({
     ...state,
-    tasks,
+    tasks: tasks,
   })),
-  on(addNewTaskAction, (state, { newTask }) => ({
+  on(addNewTaskSuccessAction, (state, { newTask }) => ({
     ...state,
     tasks: [...state.tasks, newTask],
   })),

@@ -8,7 +8,7 @@ describe('PreCodeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PreCodeComponent]
+      declarations: [PreCodeComponent],
     });
     fixture = TestBed.createComponent(PreCodeComponent);
     component = fixture.componentInstance;

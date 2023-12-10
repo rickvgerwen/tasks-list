@@ -8,7 +8,7 @@ describe('ContentLayoutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ContentLayoutComponent]
+      declarations: [ContentLayoutComponent],
     });
     fixture = TestBed.createComponent(ContentLayoutComponent);
     component = fixture.componentInstance;

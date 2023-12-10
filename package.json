@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test-cov": "ng test --code-coverage",
+    "test-cov": "ng test --code-coverage --watch",
     "lint": "ng lint --cache",
     "pre-commit": "npm run lint & npm run test",
     "json-server": "json-server --watch src/app/data/server/database.json --port 3000"

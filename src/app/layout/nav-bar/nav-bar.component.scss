@@ -43,7 +43,7 @@ nav.main-nav {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--primary-color);
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
     transition: var(--standard-transition);
   }
 }

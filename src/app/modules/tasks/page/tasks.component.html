@@ -1,1 +1,13 @@
-<p>tasks works!</p>
+<ng-container *ngIf="tasks$ | async as tasks">
+  <ul class="tasks-list">
+    <app-list-card *ngFor="let task of tasks">
+      <div class="task-item">
+        <h2>{{ task.title }}</h2>
+        <p>Prio: {{ task.priority }}</p>
+        <p>Status: {{ task.status }}</p>
+      </div>
+    </app-list-card>
+  </ul>
+</ng-container>
+
+<app-pre-code [input]="tasks$ | async"></app-pre-code>

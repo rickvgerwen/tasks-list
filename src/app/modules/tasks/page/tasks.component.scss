@@ -1,0 +1,25 @@
+ul.tasks-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-item {
+  display: grid;
+  grid-template-areas:
+    'title status'
+    'title priority';
+  align-items: center;
+
+  h2 {
+    grid-area: title;
+  }
+
+  p.status {
+    grid-area: status;
+  }
+
+  p.priority {
+    grid-area: priority;
+  }
+}

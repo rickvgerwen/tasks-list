@@ -1,0 +1,19 @@
+.content-layout {
+  display: grid;
+  grid-template-areas:
+    'navbar'
+    'main'
+    'footer';
+
+  nav {
+    grid-area: navbar;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  &:last-child {
+    grid-area: footer;
+  }
+}

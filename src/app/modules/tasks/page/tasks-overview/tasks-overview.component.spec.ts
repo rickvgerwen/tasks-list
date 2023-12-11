@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TasksOverviewComponent } from './tasks-overview.component';
 import { of } from 'rxjs';

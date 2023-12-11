@@ -18,9 +18,9 @@ describe('Tasks Effects', () => {
   let tasksService: jasmine.SpyObj<TasksService>;
   let consoleErrorSpy: jasmine.Spy;
 
-  beforeEach(() => {
-    const tasksServiceSpy = jasmine.createSpyObj('TasksService', ['getAllTasks', 'addNewTask']);
+  const tasksServiceSpy = jasmine.createSpyObj('TasksService', ['getAllTasks', 'addNewTask']);
 
+  beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         TasksEffects,
@@ -34,11 +34,11 @@ describe('Tasks Effects', () => {
     consoleErrorSpy = spyOn(console, 'error');
   });
 
-  afterEach(() => {
-    consoleErrorSpy.calls.reset();
-  });
-
   describe('getTasks$', () => {
+    afterEach(() => {
+      consoleErrorSpy.calls.reset();
+    });
+
     it('should return the getAllTasksSuccessAction on success', () => {
       const mockedTasks: Task[] = mockTasks();
 
@@ -66,8 +66,12 @@ describe('Tasks Effects', () => {
   describe('addTask$', () => {
     const mockNewTask: Task = {} as Task;
 
+    afterEach(() => {
+      consoleErrorSpy.calls.reset();
+    });
+
     it('should return the addNewTaskSuccessAction on success', () => {
-      tasksService.addNewTask.and.returnValue(of());
+      tasksService.addNewTask.and.returnValue(of(mockNewTask));
 
       actions$ = of(addNewTaskAction({ newTask: mockNewTask }));
 

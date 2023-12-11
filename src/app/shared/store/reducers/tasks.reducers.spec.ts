@@ -1,5 +1,5 @@
 import { Task } from '@shared/types/task.type';
-import { addNewTaskAction, getAllTasksSuccessAction } from '../actions/tasks.actions';
+import { addNewTaskSuccessAction, getAllTasksSuccessAction } from '../actions/tasks.actions';
 import { TasksState } from '../state/tasks.state';
 import { mockTasksFeatureState } from './mock-tasks-state';
 import { tasksReducer } from './tasks.reducers';
@@ -16,11 +16,11 @@ describe('Tasks Reducers', () => {
     });
   });
 
-  describe('addNewTaskAction', () => {
+  describe('addNewTaskSuccessAction', () => {
     it('should adds tasks to the state', () => {
       const mockNewTask = {} as Task;
 
-      const actual = tasksReducer(mockTasksFeatureState(), addNewTaskAction({ newTask: mockNewTask }));
+      const actual = tasksReducer(mockTasksFeatureState(), addNewTaskSuccessAction({ newTask: mockNewTask }));
       const expected: TasksState = {
         tasks: [...mockTasksFeatureState().tasks, mockNewTask],
       };
